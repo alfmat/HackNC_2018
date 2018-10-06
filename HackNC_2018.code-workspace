@@ -3,5 +3,8 @@
 		{
 			"path": "WS_3_Web_Dev"
 		}
-	]
+	],
+	"settings": {
+		"python.pythonPath": "/usr/local/bin/python3"
+	}
 }
