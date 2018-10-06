@@ -10,7 +10,13 @@
 		},
 		{
 			"path": "mondrian puzzle"
+<<<<<<< HEAD
 >>>>>>> master
+=======
+		},
+		{
+			"path": "Advanced_Web_Dev"
+>>>>>>> f80324ddea9c4a58dd3dd0cc483774b6e0a83e43
 		}
 	]
 }
