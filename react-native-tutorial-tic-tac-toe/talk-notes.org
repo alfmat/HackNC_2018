@@ -1,0 +1,281 @@
+* HackNC 2018 - Tic-Tac-Toe in React Native (talk notes)
+** prereqs and preamble
+- prereqs (to know before you'll understand this talk)
+  - HTML
+  - some programming, esp. in Javascript
+  - tic-tac-toe rules
+- prereqs (for running this code on your computer & phone)
+  - have node installed (which includes npm, node package manager)
+  - have ~create-react-native-app~ npm package installed globally
+    (~npm install -g create-react-native-app~)
+  - a phone with the 'Expo Client' app installed
+- warning about development speed
+  - you won't be able to edit text as fast as me. :-)
+  - I suspect you'll absorb more by watching me code, then reading the source
+    code as homework later
+  - but if you want to see the app at each step on your own phone:
+    - clone my repo: ~git clone https://gitlab.com/unc-app-lab/react-native-tutorial-tic-tac-toe~
+    - each time I start a step (I'll let you know), checkout the tag for that
+      step, which will basically time-travel your code to the conclusion of that
+      step.
+    - do this with ~git checkout stepXX~
+    - note: I won't be waiting around for you to do this. :-)
+- objective: build a tic-tac-toe game using React Native
+- about React Native
+  - React.js is 'a JavaScript library for building user interfaces.'
+  - [[https://www.npmjs.com/browse/depended][4th most popular npm package right now]]
+  - used on many, many web sites for dynamic functionality
+  - React Native is React, except targeting the mobile platform
+  - Pretty comfortable if you know web development:
+    - program in Javascript
+    - use React, and, indeed, any npm package
+    - use HTML-ish markup, though with different tag names
+    - use CSS-ish styling (most CSS properties just work)
+    - lots easier for web developers to use than a full native approach, e.g.
+      Java and Android Studio for Android or Swift and XCode for iOS
+    - cross-platform out of the box
+** step 1: initialize the project
+- git time-travel instructions
+  - ~git clone https://gitlab.com/unc-app-lab/react-native-tutorial-tic-tac-toe~
+  - ~git checkout step01~
+- steps
+  - ~create-react-native-app hacknc~
+  - choose 'blank' template
+  - ~cd hacknc~
+  - ~expo start~
+  - install the 'expo client' app on your phone
+  - scan the QR code with your phone and open the link in the Expo app
+  - change the text in the ~App.js~ file and demonstrate live-reloading
+- summary
+  - use both your computer and your phone to develop a mobile app
+  - get started quickly with the ~create-react-native-app~ tool
+** step 2: create a wireframe for the board
+- git time-travel instructions
+  - ~git checkout step02~
+- steps
+  - open App.js in editor
+  - maybe zoom font
+  - toggle line numbers
+  - strip semicolons
+  - move style to inside render() method
+  - remove StyleSheet import
+  - remove justifyContent from App style
+  - change backgroundColor to 'beige'
+  - save and show 'beige' background
+  - but where did text go? can't even see it on the physical phone.
+  - add SafeAreaView import and use it as outermost view
+  - replace <Text> tag with <Board /> and <Status />
+  - define Board component: flex: 1, justifyContent: 'center', placeholder
+    <Text>
+  - define Status component: flex: 1, placeholder <Text>
+  - save and see the placeholders
+  - replace Board placeholder with 3 <Row />s and define Row component with
+    flexDirection: 'row' and <Text> placeholder
+  - save and see the rows
+  - replace Row placeholder with 3 <Square />s and define Square component with
+    text placeholder, width: 100, height: 100
+  - save and see the squares
+  - add style to Square: borderWidth: 1, borderColor: 'black'
+  - save and see the border
+  - add style to Square: justifyContent: 'center'
+  - add style to Square's text: textAlign: 'center'
+  - save and see the centering
+- summary
+  - markup looks a lot like HTML, but with different tag names
+  - layout uses flexbox positioning (see flexboxfroggy.com to learn)
+  - many familiar CSS rules work to style elements
+  - the SafeAreaView component in React Native
+** step 3: add state and render squares from state
+- git time-travel instructions
+  - ~git checkout step03~
+- steps
+  - add constructor(props) method to App component
+  - in constructor, set this.state to
+    {squares: ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']}
+  - pass squares prop to Board
+  - pass squares and startIndex props to Row
+  - pass label prop to Square = squares[startIndex + 1]
+  - replace Square's placeholder text with label prop
+  - save and see the X's and O's
+  - add styles to Square's Text: fontSize: 36, fontWeight: 'bold'
+  - save and see the bigger, bolder X's and O's
+- summary
+  - [class-based] components can have state
+  - *your rendered output should depend on your state in some way*
+  - components can pass data as 'props' or properties
+** step 4: connect square touches to new ~onMove~ method
+- git time-travel instructions
+  - ~git checkout step04~
+- steps
+  - replace initial squares state with ~Array(9).fill(null)~
+  - save and see the empty squares
+  - add ~onMove(i)~ method to App component, sets squares[i] = 'X'
+    #+BEGIN_SRC javascript
+onMove(i) {
+  let newSquares = this.state.squares.slice()
+  newSquares[i] = 'X'
+  this.setState({
+    squares: newSquares,
+  })
+}
+    #+END_SRC
+  - add setTimeout in constructor to call ~onMove(4)~
+    #+BEGIN_SRC javascript
+    setTimeout(() => this.onMove(4), 3000)
+    #+END_SRC
+  - save and show that middle square gets set 3 seconds after load; we just
+    verified that our method works, so we can clear our head of the
+    implementation details and focus on the next thing
+  - remove setTimeout
+  - pass onMove prop to Board
+  - pass onMove prop to Rows
+  - pass onPress prop to Squares
+    - <Square label={squares[startIndex + 2]} onPress={() => onMove(startIndex + 2)} />
+  - add TouchableHighlight import
+  - replace Square's <View> with <TouchableHighlight> & add onPress prop
+  - save and show press behavior
+- summary
+  - use methods to modify state in a [class-based] component
+  - pass methods as props to other components so they can call them when needed
+  - be sure to set your ~this~ reference correctly when passing a method as a prop
+  - the ~TouchableHighlight~ component in React Native
+** step 5: track whose turn it is
+- git time-travel instructions
+  - ~git checkout step05~
+- steps
+  - add ~xIsNext: true~ to initial state
+  - in ~onMove~ method, un-hardcode what chosen square is set to
+    #+BEGIN_SRC javascript
+  onMove(i) {
+    let newSquares = this.state.squares.slice()
+    const turn = this.state.xIsNext ? 'X' : 'O'
+    newSquares[i] = turn
+    this.setState({
+      squares: newSquares,
+      xIsNext: !this.state.xIsNext,
+    })
+  }
+    #+END_SRC
+  - save and see that X's and O's now alternate
+- summary
+  - practice using state and passing it down to children components
+** step 6: display turn indicator to user
+- git time-travel instructions
+  - ~git checkout step06~
+- steps
+  - pass ~turn~ prop to Status, extracting whoseTurn() method
+  - replace Text placeholder with ~{turn}'s turn~
+  - save and see Status change as I play
+  - bump fontSize to 36
+  - save and see bigger font
+- summary
+  - more practice with props
+** step 7: display winning indication to user
+- git time-travel instructions
+  - ~git checkout step07~
+- steps
+  - add ~winner~ function
+    #+BEGIN_SRC javascript
+const winner = squares => {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ]
+
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i]
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a]
+    }
+  }
+  return undefined
+}
+    #+END_SRC
+  - pass winner prop to Status
+  - set ~text~ var to Status text based on turn and winner
+    #+BEGIN_SRC javascript
+const Status = ({turn, winner}) => {
+  const text = winner === null ? 'Tie game :-/'
+        : winner !== undefined ? winner + ' wins!'
+        : turn + "'s turn"
+
+  return (
+    <View style={{flex: 1}}>
+      <Text style={{fontSize: 36}}>{text}</Text>
+    </View>
+  )
+}
+    #+END_SRC
+  - save and play to win, see status text
+  - keep playing after game end, to demo a bug
+  - refresh and overwrite previous move, to demo same bug
+- summary
+  - not all logic has to live in components
+** step 8: guard against illegal moves
+- git time-travel instructions
+  - ~git checkout step08~
+- steps
+  - guard from changing state in onMove method if win condition or the chosen
+    square has already been picked
+    - if (this.state.squares[i] || winner(this.state.squares)) return null
+  - save and demo that the bug is fixed
+- summary
+  - state-changing methods can skip the state-changing statement if needed
+** step 9: display tie game indication to user
+- git time-travel instructions
+  - ~git checkout step09~
+- steps
+  - add logic in ~winner~ to detect tie
+    - if (squares.indexOf(null) === -1) return null // tie game
+  - add condition in Status text to indicate tie game
+    #+BEGIN_SRC javascript
+  const text = winner === null ? 'Tie game :-/'
+        : winner !== undefined ? winner + ' wins!'
+        : turn + "'s turn"
+    #+END_SRC
+  - refresh and play to tie, see status text
+- summary
+  - usually a view change goes along with a state/logic change
+** step 10: add 'new game' button
+- git time-travel instructions
+  - ~git checkout step10~
+- steps
+  - add onNewGame() method, extracting newGameState
+  - pass onNewGame prop to Status
+  - add Button import
+  - add start new game Button to Status
+    - <Button title='Start new game' onPress={onNewGame} />
+  - save and demo button
+  - add style to Status Text: textAlign: 'center'
+  - save and demo centering
+- summary
+  - practice with state-changing methods
+  - the Button component in React Native
+** conclusion
+- our objective was to build a tic-tac-toe game in React Native
+  - we achieved this with 125 lines of code
+- we learned about
+  - React
+    - deriving view markup from the state
+    - creating components
+    - passing props
+  - React Native
+    - HTML-ish markup, but different tag names
+    - CSS-ish styling
+    - flexbox positioning
+  - ~create-react-native-app~
+    - easy, batteries-included start for a new project
+  - Expo
+    - use your phone while developing a mobile app
+    - does other things too, like packaging up your app to publish to an app store
+- I hope you feel empowered to create a mobile app for HackNC (or at least as
+  empowered as it's possible to feel from an hour-long workshop :-) )
+- if you have success building a mobile app for HackNC (or otherwise), I'd be
+  interested to hear about it!
+- feel free to swing by the App Lab (SN027) sometime and tell me about it.
