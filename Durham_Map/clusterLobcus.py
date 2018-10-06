@@ -13,7 +13,7 @@ print(obj.columns)
 #print(obj.values)
 
 # print("Good restaurants: ")
-obj.loc[obj[float('rating')] > 3.0]
+obj.loc[(float(obj['rating']) > 3.0)]
 
 print(obj.describe)
 
