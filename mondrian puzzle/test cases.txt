@@ -1,0 +1,22 @@
+//Tests whether class Rect is doing what I want it to
+    int coords[4]={1,2,3,4};
+    int *testCoords;
+    //constructor test
+    cout<<test.getL()<<" "<<test.getW()<<" "<<test.getUse()<<" "<<test.getArea()<<endl;
+    testCoords=test.getCoords();
+    for(int i=0;i<4;i++){
+        cout<<testCoords[i]<<" ";
+    }
+    cout<<endl;
+    //setting test
+    test.setL(4);
+    test.setW(5);
+    test.setUse(2);
+    test.setCoords(coords);
+    cout<<test.getL()<<" "<<test.getW()<<" "<<test.getUse()<<" "<<test.getArea()<<endl;
+
+    testCoords=test.getCoords();
+    for(int i=0;i<4;i++){
+        cout<<testCoords[i]<<" ";
+    }
+    cout<<endl;

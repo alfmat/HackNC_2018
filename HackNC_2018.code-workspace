@@ -2,6 +2,12 @@
 	"folders": [
 		{
 			"path": "WS_3_Web_Dev"
+		},
+		{
+			"path": "react-native-tutorial-tic-tac-toe"
+		},
+		{
+			"path": "mondrian puzzle"
 		}
 	],
 	"settings": {

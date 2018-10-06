@@ -1,6 +1,9 @@
 from flask import Flask
 app = Flask(__name__)
 
+if __name__ == "__main__":
+    app.run(host= "0.0.0.0", port = 8000, debug = True)
+
 x = 0
 @app.route("/")
 def root():
@@ -22,5 +25,3 @@ def incr_by(n):
     x = x+n
     return "X has been incremented by "+str(n)
 
-if __name__ == "__main__":
-    app.run(host= "0.0.0.0", port = 8000, debug = True)
