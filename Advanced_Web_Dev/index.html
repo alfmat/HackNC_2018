@@ -1,6 +1,7 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
     <title>Places To Eat</title>
     <style>
     .red-thing {
@@ -8,46 +9,23 @@
         font-size: 72px;
     }
     .search-thing {
-        font-size: 50px;
+        font-size: 35px;
     }
     </style>
     <body>
-        <input class="search-thing" type="text" id="restaurantImput" onkeyup="myFunction()" placeholder="Search for restaurants..">
+        <div class="hero">
+        <h1>Search Places to Eat</h1>
+        <input class="search-thing"type="text" id="restaurantImput" onkeyup="myFunction()" placeholder="Search for restaurants..">
         <h1>Indicated desired Rating</h1>
         5: <input type="checkbox" id="myCheck" onclick="myFunction()">
         4: <input type="checkbox" id="myCheck" onclick="myFunction()">
         3: <input type="checkbox" id="myCheck" onclick="myFunction()">
         2: <input type="checkbox" id="myCheck" onclick="myFunction()">
         1: <input type="checkbox" id="myCheck" onclick="myFunction()">
-        <h1>todo list</h1>
-        <ul>
-            <li>midterm 1</li>
-            <ol>
-                <li>study</li>
-                <li class = "red-thing">sleep</li>
-            </ol>
-        </ul>
-        <a class="search-thing"href="https://www.yelp.com/">Research restaurants on Yelp!</a>
-        <canvas id=/canvas>"myCanvas" width = "200" height = "200"></canvas>
-        <script>
-            var canvas  = document.getElementById("myCanvas");
-            var ctx = canvas.getContext("2d");
-            var x = 0;
-            var y = 0;
-            function draw() {
-                x += 10;
-                y += 10;
-                var vx = 10;
-                var vy = 10;
-                x = x+vx
-                y = y+vy
-                ctx.beginPath();
-                ctx.arc(x , y, 10, 0, 2 * Math.PI);
-                ctx.stroke();
-                requestAnimationFrame(draw);
-            }
-            requestAnimationFrame(draw);
-            </script>
+        <h2>
+            <a class="red-thing"href="https://www.yelp.com/">Research restaurants on Yelp!</a>
+        </h2>
+    </div>
     </body>
 </head>
 </html>
