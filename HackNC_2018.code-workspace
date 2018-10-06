@@ -36,5 +36,11 @@
 >>>>>>> 45ba27b3e3f309bff780031678b9fac09ca900fa
 		}
 	],
+<<<<<<< HEAD
 	"settings": {}
+=======
+	"settings": {
+		"python.pythonPath": "/usr/local/bin/python3"
+	}
+>>>>>>> jjin
 }
