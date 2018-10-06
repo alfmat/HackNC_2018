@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "react-native-tutorial-tic-tac-toe"
+<<<<<<< HEAD
+=======
+		},
+		{
+			"path": "mondrian puzzle"
+>>>>>>> master
 		}
 	]
 }
