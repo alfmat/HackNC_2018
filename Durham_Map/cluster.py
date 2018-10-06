@@ -5,4 +5,3 @@ from skylearn.cluster import KMeans
 
 df = pd.read_csv('durham_restaurants.csv')
 df.head()
-
