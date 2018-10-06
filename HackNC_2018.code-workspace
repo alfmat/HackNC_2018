@@ -1,19 +1,20 @@
 {
 	"folders": [
 		{
-			"path": "WS_3_Web_Dev"
+			"path": "Advanced_Web_Dev"
 		},
 		{
-			"path": "react-native-tutorial-tic-tac-toe"
+			"path": "Durham_Map"
 		},
 		{
 			"path": "mondrian puzzle"
 		},
 		{
-			"path": "Advanced_Web_Dev"
+			"path": "react-native-tutorial-tic-tac-toe"
 		},
 		{
-			"path": "Durham_Map"
+			"path": "WS_3_Web_Dev"
 		}
-	]
+	],
+	"settings": {}
 }
