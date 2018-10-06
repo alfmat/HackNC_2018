@@ -16,7 +16,13 @@
 		},
 		{
 			"path": "Advanced_Web_Dev"
+<<<<<<< HEAD
 >>>>>>> f80324ddea9c4a58dd3dd0cc483774b6e0a83e43
+=======
+		},
+		{
+			"path": "Durham_Map"
+>>>>>>> 62da4daf91f2fb6ceec9527329744acea02f858b
 		}
 	]
 }
