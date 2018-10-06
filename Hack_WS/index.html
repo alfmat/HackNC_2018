@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello, Everyone</title>
+<style>
+.red-thing {
+    color: red;
+    font-size: 72px;
+}
+.blue-thing {
+    color: blue;
+    font-size: 72px;
+}
+</style>
+</head>
+<body>
+<h1>todo List</h1>
+<ul>
+    <li>miterm 1</li>
+    <ol>
+        <li class="blue-thing">study</li>
+        <li class="red-thing">sleep</li>
+    </ol>
+</ul>
+<canvas id="myCanvas" width="200" height="200"></canvas>
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+var x = 0
+var y = 0
+  
+var vx = 10
+var vy = 10
+
+function draw() {
+    ctx.clearRec(0, 0, 200)
+    if (x > 200) {
+        vx = -vx
+    }
+    if (y > 200) {
+        vy = - vy
+    }
+    x = x + 10
+    y = y + 10
+    ctx.beginPath();
+    ctx.arc(x, y, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+    requestAnimationFrame(draw)
+}
+requestAnimationFrame(draw)
+</script>
+</body>
+</html>

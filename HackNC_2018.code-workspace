@@ -16,5 +16,11 @@
 			"path": "WS_3_Web_Dev"
 		}
 	],
+<<<<<<< HEAD
 	"settings": {}
+=======
+	"settings": {
+		"python.pythonPath": "/usr/local/bin/python3"
+	}
+>>>>>>> jjin
 }
