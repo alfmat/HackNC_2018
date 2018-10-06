@@ -1,14 +1,24 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello World</title>
+    <title>Places To Eat</title>
     <style>
     .red-thing {
         color: red;
         font-size: 72px;
     }
+    .search-thing {
+        font-size: 50px;
+    }
     </style>
     <body>
+        <input class="search-thing" type="text" id="restaurantImput" onkeyup="myFunction()" placeholder="Search for restaurants..">
+        <h1>Indicated desired Rating</h1>
+        5: <input type="checkbox" id="myCheck" onclick="myFunction()">
+        4: <input type="checkbox" id="myCheck" onclick="myFunction()">
+        3: <input type="checkbox" id="myCheck" onclick="myFunction()">
+        2: <input type="checkbox" id="myCheck" onclick="myFunction()">
+        1: <input type="checkbox" id="myCheck" onclick="myFunction()">
         <h1>todo list</h1>
         <ul>
             <li>midterm 1</li>
@@ -17,9 +27,8 @@
                 <li class = "red-thing">sleep</li>
             </ol>
         </ul>
-        Its me nick
-        <a href="https://google.com">Google</a>
-        <canvas id="myCanvas" width = "200" height = "200"></canvas>
+        <a href="https://www.yelp.com/">Research restaurants on Yelp!</a>
+        <canvas id=/canvas>"myCanvas" width = "200" height = "200"></canvas>
         <script>
             var canvas  = document.getElementById("myCanvas");
             var ctx = canvas.getContext("2d");
