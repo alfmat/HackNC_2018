@@ -1,7 +1,19 @@
 import pandas as pd
 import numpy as np 
+#import matplotlib.pyplot as plt
+#%matplotlib inline
 
-df = pd.read_csv('opentable.com_raleigh-durham-chapel-hill-restaurant-listings.csv')
+df = pd.read_csv('rd2data.csv')
 print(df.head())
 
-obj = pd.DataFrame(data)
+obj = pd.DataFrame(df)
+
+#print(obj['website'])
+print(obj.columns)
+#print(obj.values)
+
+# print("Good restaurants: ")
+obj.loc[obj[float('rating')] > 3.0]
+
+print(obj.describe)
+
