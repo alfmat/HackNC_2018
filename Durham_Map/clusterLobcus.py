@@ -3,8 +3,7 @@ import numpy as np
 import csv
 #import matplotlib.pyplot as plt
 #%matplotlib inline
-name=[]
-dates=[],scores=[],website=[],rating=[],address=[],una=[],category=[],price_range=[],city=[],phnumber=[],una2=[],description=[],other=[]
+name=[],website=[],rating=[],address=[],una=[],category=[],price_range=[],city=[],phnumber=[],una2=[],description=[],other=[]
 df = pd.read_csv('rd2.csv')
 for row in df:
     name.append(row[0])
