@@ -15,10 +15,6 @@ def search(name):
             searchResult.append(n)
     return searchResult
 
-def fn(nameDF,minRating):
-    #return array of names of companies w. ratings > minRating
-    return nameDF.loc[(nameDF.rating > minRating),nameDF.name]
-
 def main():
     search('Burger King')
 
