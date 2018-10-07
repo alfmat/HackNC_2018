@@ -5,6 +5,7 @@ import csv
 #%matplotlib inline
 name=[],website=[],rating=[],address=[],una=[],category=[],price_range=[],city=[],phnumber=[],una2=[],description=[],other=[]
 df = pd.read_csv('rd2.csv')
+
 for row in df:
     name.append(row[0])
     website.append(row[1])
@@ -32,4 +33,3 @@ rating1 = float(input("Enter lowest rating a restaurant can have."))
 obj.loc[(obj.rating > rating1),obj.name]
 
 print(obj.describe)
-
