@@ -22,7 +22,7 @@ for x in ratings:
 
 #print(ratings)
 output = {'names':names,'ratings':ratings,'address':address}
-print(names[0])
+#print(names[0])
 #print("Length:",len(names))
 
 def search(name):
@@ -50,9 +50,19 @@ def searchR(minRating):
             j += 1
     return searchResult1
 
+def infoFinder(name):
+    i = 0
+    for x in names:
+        if x == name:
+            break
+        i += 1
+    return address[i]
 #search for name given rating >=0  
 
-#print(searchR(4.0))
+uin = float(input("Min rating: "))
+for x in searchR(uin):
+    print(x)
+print("Tuscan Blu address: "+infoFinder("Tuscan Blu"))
 '''
 print(names)
 print(ratings)
