@@ -14,19 +14,13 @@
     <body>
         <div class="hero">
         <h1>Search Places to Eat</h1>
-        <input type=”text” name=restaurantInput value={{request.form.restaurant}}>
-        <!--<input class="search-thing"type="text" id="restaurantInput" onkeyup="myFunction()" placeholder="Search for restaurants..">-->
+        <input class="search-thing"type="text" id="restaurantInput" onkeyup="myFunction()" placeholder="Search for restaurants..">
         <h1>Indicated desired Rating</h1>
         <input class="search-thing"type="text" id="ratingInput" onkeyup="myFunction()" placeholder="Enter a Rating (0-5.0)..">
         <h1>Which City?</h1>
         <input class="search-thing"type="text" id="cityInput" onkeyup="myFunction()" placeholder="Enter a City..">
         <h1>What Category?</h1>
         <input class="search-thing"type="text" id="categoryInput" onkeyup="myFunction()" placeholder="Enter a Category..">
-        <form action="https://0.0.0.0:8000">
-            Restaurant:<br>
-            <input type="text" name="rType"><br>
-            <input type="submit" value="Submit">
-          </form>
         <!-- 5: <input type="checkbox" id="check5" onclick="myFunction()">
         4: <input type="checkbox" id="check4" onclick="myFunction()">
         3: <input type="checkbox" id="check3" onclick="myFunction()">
