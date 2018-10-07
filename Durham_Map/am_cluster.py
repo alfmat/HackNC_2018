@@ -17,6 +17,7 @@ with open("durham_restaurants.csv") as f:
         website.append(row[1])
         phnumber.append(row[8])
         address.append(row[3])
+<<<<<<< HEAD
         category.append(row[5])
 
 names.pop(0)
@@ -26,6 +27,8 @@ website.pop(0)
 phnumber.pop(0)
 address.pop(0)
 category.pop(0)
+=======
+>>>>>>> 9dd68cabbd84743c6a09f5d2197551e9d385808c
 
 def search(name):
     searchResult = []
