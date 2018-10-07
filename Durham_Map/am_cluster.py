@@ -7,7 +7,7 @@ with open("durham_restaurants.csv") as f:
     for row in reader:
         names.append(row[0])
         address.append(row[3])
-        
+
 def search(name):
     searchResult = []
     for n in names:

@@ -1,35 +1,59 @@
-import pandas as pd
-import numpy as np 
 import csv
-#import matplotlib.pyplot as plt
-#%matplotlib inline
-name=[],website=[],rating=[],address=[],una=[],category=[],price_range=[],city=[],phnumber=[],una2=[],description=[],other=[]
-df = pd.read_csv('rd2.csv')
 
-for row in df:
-    name.append(row[0])
-    website.append(row[1])
-    rating.append(row[2])
-    address.append(row[3])
-    una.append(row[4])
-    category.append(row[5])
-    price_range.append(row[6])
-    city.append(row[7])
-    phnumber.append(row[8])
-    una2.append(row[9])
-    description.append(row[10])
-    other.append(row[11])
-print(df.head())
+names = []
+address = []
+ratings = []
 
-obj = pd.DataFrame(df)
+with open("rd2data.csv") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        names.append(row[0])
+        ratings.append(row[2]) #convert to float lat
+        address.append(row[3])
 
-#print(obj['website'])
-print(obj.columns)
-#print(obj.values)
+names.pop(0)
+ratings.pop(0)
+address.pop(0)
 
-# print("Good restaurants: ")
-print(obj['rating'])
-rating1 = float(input("Enter lowest rating a restaurant can have."))
-obj.loc[(obj.rating > rating1),obj.name]
+i = 0
+for x in ratings:
+    ratings[i] = float(x)
+    i += 1
 
-print(obj.describe)
+#print(ratings)
+output = {'names':names,'ratings':ratings,'address':address}
+#print(output)
+#print("Length:",len(names))
+
+def search(name):
+    searchResult = []
+    for n in names:
+        if name in n:
+            searchResult.append(n)
+    return searchResult
+
+def searchR(minRating):
+    i = 0
+    searchResult = []
+    searchResult1 = []
+    for x in ratings:
+        if x >= minRating:
+            searchResult.append(i)
+            #print(x,minRating,i)
+        i += 1
+
+    for x in searchResult:
+        j = 0
+        for y in names:
+            if j == x:
+                searchResult1.append(y)
+            j += 1
+    return searchResult1
+
+#search for name given rating >=0  
+
+print(searchR(4.0))
+'''
+print(names)
+print(ratings)
+print(address)'''
