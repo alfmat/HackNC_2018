@@ -1,22 +1,46 @@
 {
 	"folders": [
 		{
-			"path": "WS_3_Web_Dev"
-		},
-		{
-			"path": "react-native-tutorial-tic-tac-toe"
-		},
-		{
-			"path": "mondrian puzzle"
-		},
-		{
 			"path": "Advanced_Web_Dev"
 		},
 		{
+<<<<<<< HEAD
+			"path": "react-native-tutorial-tic-tac-toe"
+<<<<<<< HEAD
+=======
+=======
 			"path": "Durham_Map"
+>>>>>>> 45ba27b3e3f309bff780031678b9fac09ca900fa
+		},
+		{
+			"path": "mondrian puzzle"
+<<<<<<< HEAD
+>>>>>>> master
+=======
+		},
+		{
+<<<<<<< HEAD
+			"path": "Advanced_Web_Dev"
+<<<<<<< HEAD
+>>>>>>> f80324ddea9c4a58dd3dd0cc483774b6e0a83e43
+=======
+		},
+		{
+			"path": "Durham_Map"
+>>>>>>> 62da4daf91f2fb6ceec9527329744acea02f858b
+=======
+			"path": "react-native-tutorial-tic-tac-toe"
+		},
+		{
+			"path": "WS_3_Web_Dev"
+>>>>>>> 45ba27b3e3f309bff780031678b9fac09ca900fa
 		}
 	],
+<<<<<<< HEAD
+	"settings": {}
+=======
 	"settings": {
 		"python.pythonPath": "/usr/local/bin/python3"
 	}
+>>>>>>> jjin
 }

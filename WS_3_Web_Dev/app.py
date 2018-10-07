@@ -30,5 +30,9 @@ def result():
         return "you chose a restaurant"
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+    app.run(host= "0.0.0.0", port = 8000, debug = True) 
+=======
     app.run(host= "0.0.0.0", port = 8000, debug = True)
 
+>>>>>>> 45b1bfd6af6d1f6f3da7d3ee57ef3778d2d6fcbb
