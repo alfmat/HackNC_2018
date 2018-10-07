@@ -1,4 +1,5 @@
 body {
+	background-image: url('https://img.huffingtonpost.com/asset/585be1aa1600002400bdf2a6.jpeg?ops=scalefit_970_noupscale');
 	height: 100%;
 	margin: 0;
 	text-align: center;
@@ -6,24 +7,22 @@ body {
 	background-size: cover;
 	color: white;
     background-repeat: no-repeat; 
-    font-family: Georgia, serif;
+	font-family: Georgia, serif;
+	text-align: center;
 }
 
 h1 {
-	background-color: grey;
-	width: 300px;
-    height: 100px;
+
+	text-align: center;
 }
 
 h2 {
-	background-color: grey;
-	width: 300px;
-    height: 100px;
+	color: red;
+	text-align: center;
 }
 
 
 .hero {
-	background-image: url('https://img.huffingtonpost.com/asset/585be1aa1600002400bdf2a6.jpeg?ops=scalefit_970_noupscale');
 	background-position: center top;
 	background-size: cover;
 	font-family: 'Trebuchet MS', 'Helvetica';

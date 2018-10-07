@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 x = 0
@@ -21,6 +21,13 @@ def incr_by(n):
     global x
     x = x+n
     return "X has been incremented by "+str(n)
+
+@app.route('/result',methods = ['POST', 'GET'])
+def result():
+    if request.method == 'POST':
+        result = request.form['restaurantInput']
+        print(result)
+        return "you chose a restaurant"
 
 if __name__ == "__main__":
 <<<<<<< HEAD

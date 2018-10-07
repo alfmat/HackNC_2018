@@ -6,7 +6,6 @@
     <style>
     .red-thing {
         color: red;
-        font-size: 72px;
     }
     .search-thing {
         font-size: 35px;
@@ -15,17 +14,22 @@
     <body>
         <div class="hero">
         <h1>Search Places to Eat</h1>
-        <input class="search-thing"type="text" id="restaurantImput" onkeyup="myFunction()" placeholder="Search for restaurants..">
+        <input class="search-thing"type="text" id="restaurantInput" onkeyup="myFunction()" placeholder="Search for restaurants..">
         <h1>Indicated desired Rating</h1>
-        5: <input type="checkbox" id="myCheck" onclick="myFunction()">
-        4: <input type="checkbox" id="myCheck" onclick="myFunction()">
-        3: <input type="checkbox" id="myCheck" onclick="myFunction()">
-        2: <input type="checkbox" id="myCheck" onclick="myFunction()">
-        1: <input type="checkbox" id="myCheck" onclick="myFunction()">
-        <h2>
-            <a class="red-thing"href="https://www.yelp.com/">Research restaurants on Yelp!</a>
-        </h2>
+        <input class="search-thing"type="text" id="ratingInput" onkeyup="myFunction()" placeholder="Enter a Rating (0-5.0)..">
+        <h1>Which City?</h1>
+        <input class="search-thing"type="text" id="cityInput" onkeyup="myFunction()" placeholder="Enter a City..">
+        <h1>What Category?</h1>
+        <input class="search-thing"type="text" id="categoryInput" onkeyup="myFunction()" placeholder="Enter a Category..">
+        <!-- 5: <input type="checkbox" id="check5" onclick="myFunction()">
+        4: <input type="checkbox" id="check4" onclick="myFunction()">
+        3: <input type="checkbox" id="check3" onclick="myFunction()">
+        2: <input type="checkbox" id="check2" onclick="myFunction()">
+        1: <input type="checkbox" id="check1" onclick="myFunction()">-->
     </div>
+        <h2>
+            <a class="red-thing" href="https://www.yelp.com/">CLICK TO Research restaurants on Yelp!</a>
+        </h2>
     </body>
 </head>
 </html>
