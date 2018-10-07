@@ -22,7 +22,7 @@ for x in ratings:
 
 #print(ratings)
 output = {'names':names,'ratings':ratings,'address':address}
-#print(output)
+print(names[0])
 #print("Length:",len(names))
 
 def search(name):
@@ -52,7 +52,7 @@ def searchR(minRating):
 
 #search for name given rating >=0  
 
-print(searchR(4.0))
+#print(searchR(4.0))
 '''
 print(names)
 print(ratings)
