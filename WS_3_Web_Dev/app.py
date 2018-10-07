@@ -22,17 +22,11 @@ def incr_by(n):
     x = x+n
     return "X has been incremented by "+str(n)
 
-@app.route('/result',methods = ['POST', 'GET'])
+@app.route('/result',methods = ['POST'])
 def result():
     if request.method == 'POST':
-        result = request.form['restaurantInput']
-        print(result)
-        return "you chose a restaurant"
+        restaurant = request.form['restaurant']
+    return restaurant
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     app.run(host= "0.0.0.0", port = 8000, debug = True) 
-=======
-    app.run(host= "0.0.0.0", port = 8000, debug = True)
-
->>>>>>> 45b1bfd6af6d1f6f3da7d3ee57ef3778d2d6fcbb
