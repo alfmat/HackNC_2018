@@ -22,9 +22,7 @@ def incr_by(n):
     x = x+n
     return "X has been incremented by "+str(n)
 
-@app.route(string)
-input1 = input("Restaurant name: ")
-string = "/result/" + input1 + "/"
+@app.route("/result/<restaurant>/")
 def result(restaurant):
     return "you chose a restaurant called " + restaurant
 
